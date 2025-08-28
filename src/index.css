@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Limitar largura mínima e altura mínima da página */
+html, body, #root {
+  min-width: 320px;      /* mínimo do iPhone SE, por exemplo */
+  min-height: 480px;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;    /* evita scroll horizontal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Para garantir que todos os elementos herdem box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Exemplo opcional: impedir que a janela diminua demais em navegadores modernos */
+@media (max-width: 320px) {
+  body {
+    min-width: 320px;
+  }
+}
